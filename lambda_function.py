@@ -7,15 +7,15 @@ def lambda_handler(event, context):
     transactionId = event['queryStringParameters'].get('transactionId')
     transactionType = event['queryStringParameters'].get('type')
     transactionAmount = event['queryStringParameters'].get('amount')
-    transactionUnits = event['queryStringParameters'].get('units')
+    #transactionUnits = event['queryStringParameters'].get('units')
 
     #unitcost = transactionAmount/transactionUnits
 
-    print("transactionId=" + transactionId)
-    print("transactionType=" + transactionType)
-    print("transactionAmount=" + transactionAmount)
+    print(f"transactionId= {transactionId}" )
+    print(f"transactionType= {transactionType}")
+    print(f"transactionAmount= {transactionAmount}")
 
-    # Construct the response body
+    # the response body that will be sent when the request is a success in the response object
     transactionResponse = {
         "transactionId": transactionId,
         "type": transactionType,
@@ -23,7 +23,7 @@ def lambda_handler(event, context):
         "message": "Hello from lambda by Tinashe github actions root"
     }
 
-    # Construct HTTP response object
+    # HTTP response object
     responseObject = {
         "statusCode": 200,
         "headers": {
@@ -32,6 +32,9 @@ def lambda_handler(event, context):
         "body": json.dumps(transactionResponse)
     }
 
-    # Return the response object
+
     return responseObject
+
+   
+
 
