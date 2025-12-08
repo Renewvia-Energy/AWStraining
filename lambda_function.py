@@ -7,6 +7,9 @@ def lambda_handler(event, context):
     transactionId = event['queryStringParameters'].get('transactionId')
     transactionType = event['queryStringParameters'].get('type')
     transactionAmount = event['queryStringParameters'].get('amount')
+    transactionUnits = event['queryStringParameters'].get('units')
+
+    unitcost = transactionAmount/transactionUnits
 
     print("transactionId=" + transactionId)
     print("transactionType=" + transactionType)
@@ -17,7 +20,8 @@ def lambda_handler(event, context):
         "transactionId": transactionId,
         "type": transactionType,
         "amount": transactionAmount,
-        "message": "Hello from lambda by Tinashe github actions root"
+        "message": "Hello from lambda by Tinashe github actions root",
+        "Unit Cost": unitcost
     }
 
     # Construct HTTP response object
