@@ -25,7 +25,7 @@ def test_lambda_handler_success():
     assert body["transactionId"] == "12345"
     assert body["type"] == "deposit"
     assert body["amount"] == "500"
-    assert body["message"] == "Hello from lambda by Tinashe github actions testing"
+    assert body["message"] == "Hello from lambda by Tinashe (and Nick) github actions testing"
 
 
 def test_lambda_handler_missing_params():
@@ -44,4 +44,4 @@ def test_lambda_handler_missing_params():
     assert body["transactionId"] is None
     assert body["type"] is None
     assert body["amount"] is None
-    assert body["message"] == "Hello from lambda by Tinashe github actions testing"
+    assert body["message"] == "Hello from lambda by Tinashe (and Nick) github actions testing"

@@ -17,7 +17,7 @@ def lambda_handler(event, context):
         "transactionId": transactionId,
         "type": transactionType,
         "amount": transactionAmount,
-        "message": "Hello from lambda by Tinashe github actions"
+        "message": "Hello from lambda by Tinashe (and Nick) github actions"
     }
 
     # Construct HTTP response object
