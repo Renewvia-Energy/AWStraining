@@ -14,4 +14,4 @@ or
 - name: Run tests
   run: |
     cd tests
-    coverage run -m pytest -v -s
+    coverage run -m pytest -v -s 
