@@ -1,11 +1,11 @@
 name: Build, Test, and Deploy AWS Lambda
 
 on:
-  push:
-    branches:
-      - dev
-    tags:
-      - v1.*
+  # push:
+  #   branches:
+  #     - dev
+  #   tags:
+  #     - v1.*
   workflow_dispatch:
     inputs:
       logLevel:
