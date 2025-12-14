@@ -1,11 +1,6 @@
 name: Build, Test, and Deploy AWS Lambda
 
 on:
-  # push:
-  #   branches:
-  #     - dev
-  #   tags:
-  #     - v1.*
   workflow_dispatch:
     inputs:
       logLevel:
@@ -30,6 +25,8 @@ jobs:
   # the first thing is for us to build the repo
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.event.inputs.environment }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -41,6 +38,8 @@ jobs:
       - run: npm install #this installs npm
       - run: npm run build
   test:
+    environment:
+      name: ${{ github.event.inputs.environment }}
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -80,6 +79,11 @@ jobs:
   #         aws lambda update-function-code \
   #           --function-name customers \
   #           --zip-file fileb://function.zip
+   # push:
+  #   branches:
+  #     - dev
+  #   tags:
+  #     - v1.*
 
 
 
