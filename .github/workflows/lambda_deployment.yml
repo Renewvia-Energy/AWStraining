@@ -161,5 +161,3 @@ jobs:
 #           aws lambda update-function-code \
 #             --function-name customers \
 #             --zip-file fileb://function.zip
-
-w
